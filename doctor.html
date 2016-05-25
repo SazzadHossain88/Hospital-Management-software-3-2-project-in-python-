@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+ {% load staticfiles %}
+ <head>
+  <meta charset="utf-8">
+  <title>Bootsrtap For Beginners</title>
+  <meta name="description" content="Hello World">
+  <!-- Latest compiled and minified CSS -->
+   <link rel="stylesheet" href="{% static "bootstrap.min.css" %}">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="{%static "bootstrap-theme.min.css" %}">
+</head>
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static "bootstrap.min.css" %}">
+  <script src="{% static "jquery.min.js" %}"></script>
+  <script src="{% static "bootstrap.min.js" %}"></script>
+</head>
+<body background="{% static "b.jpg" %}">
+  
+
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+         <li ><a href="#">Admin</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Reception<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">In-Patient</a></li>
+            <li><a href="#">Out-Patient</a></li>
+            
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Doctors<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Prescription</a></li>
+            
+          </ul>
+        </li>
+        <li><a href="#">Lab</a></li>
+        <li><a href="#">Pharmacy</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> LogOut</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+</body>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Doctor</title>
+    <style rel="stylesheet" type="text/css" media="screen">
+
+fieldset {
+    background-color:  #dfdfdf;
+    border:  1px solid #ccc;
+    
+    padding:  1em;
+}
+
+
+    </style>
+  </head>
+
+  
+
+<form action="{% url 'doctorpage' %}" method="POST">
+    {% csrf_token %}
+	<body bgcolor="#E6E6FA">
+  <fieldset>
+    <legend>DOCTOR INFORMATION:</legend>
+    Doctor ID: <input type="text" size="30" name="DID" id="DID">   &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  Name: <input type="text" size="30" name="Dname" id="Dname">
+    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbspSearch Doctor: <input type="text" size="18" name="Dsearch" id="Dsearch"> <br></br>
+     &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  <input type="submit" value="Search" name="search_button" > 
+    <br>
+
+    <br>
+    Age: &nbsp &nbsp &nbsp &nbsp &nbsp<input type="text" size="30" name="Age" id="Age">
+    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+     <br><br>
+    Gender: &nbsp &nbsp &nbsp<select name="Gender" id="Gender">
+		50<option>Male </option>
+		<option> Female </option>
+    
+	</select>
+  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+	Department: <input type="text" size="30" name="department" id="department"><br><br>
+    Blood Group:  &nbsp &nbsp &nbsp<select name="Bloodgroup" id="Bloodgroup">
+    50<option>A(+ve) </option>
+    <option>A(-ve) </option>
+    <option>B(+ve) </option>
+    <option>B(+ve) </option>
+    <option>AB(+ve) </option>
+    <option>O(+ve) </option>
+    <option>O(-ve) </option>
+    <option>AB(-ve) </option>
+  </select><br><br>
+     Speciality: <input type="text" size="30" name="speciality" id="speciality">
+  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+    Date of birth: <input type="text" size="30" name="DOB" id="DOB">
+  </fieldset>
+  </body>
+
+
+
+  <body bgcolor="#E6E6FA">
+  <fieldset>
+    <legend>CONTACT DETAILS:</legend>
+    Address: &nbsp<input type="text" size="30" name="Address" id="Address">   &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  
+    Mobile No: <input type="text" size="30" name="mobileno" id="mobileno">
+    &nbsp &nbsp &nbsp &nbsp   Email: <input type="text" size="30" name="email" id="email">
+    <br></br>DeletePID:<input type="text" size="18" name="deleteID" id="deleteID">
+    <br>
+    
+  </fieldset>
+  </body>
+
+
+  <body bgcolor="#E6E6FA">
+  <fieldset>
+    <legend>OPTIONS:</legend>
+
+  <div class="container">
+      <div class="row">
+        <div class="well">
+       
+        
+        <button class="btn btn-success" name="save_button" ><b>Save</b></button>
+        &nbsp &nbsp &nbsp &nbsp &nbsp 
+        <button class="btn btn-warning" name="clear_button" ><b>Clear</b></button>
+        &nbsp &nbsp &nbsp &nbsp &nbsp 
+        <button class="btn btn-danger" name="delete_button" ><b>Delete</b></button>
+        &nbsp &nbsp &nbsp &nbsp &nbsp 
+        <button class="btn btn-info" name="logout_button" ><b>LOGOUT</b></button>
+        
+
+
+        </div>
+      </div>
+    </div>
+</form>
+ </fieldset>
+  </body>
+
+
+
+    
+    
+ 
+
+<br> <br>
+<head>
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+table#t01 {
+    width: 100%;    
+    background-color: #f1f1c1;
+}
+tbody{
+  width:100%;
+  overflow-y:auto;
+  overflow-x:hidden;
+}
+</style>
+</head>
+<body>
+
+
+
+
+<table id="t01">
+  <caption>Doctor Information Table</caption>
+  <tr>
+    <th>DoctorID</th>
+    <th>Name</th>  
+    <th>Department</th>  
+    <th>Age</th>
+    <th>BloodGroup</th>
+    <th>DateofBirth</th>
+    <th>Address</th>  
+    <th>Mobile</th> 
+    <th>Email</th> 
+    <th>Gender</th>  
+  </tr>
+  {% for item in datas %}
+  <tbody>
+  <tr>
+    <td>{{ item.0 }}</td>
+    <td>{{ item.1 }}</td>    
+    <td>{{ item.2}}</td>
+     <td>{{ item.3 }}</td>
+    <td>{{ item.4}}</td>    
+    <td>{{ item.5 }}</td>
+     <td>{{ item.6 }}</td>
+    <td>{{ item.7 }}</td>   
+    <td>{{ item.8 }}</td>
+    <td>{{ item.9 }}</td>
+  
+    
+  </tr>
+  </tbody>
+  {% endfor %} 
+  
+</table>
+
+</body>
+
+</html>
