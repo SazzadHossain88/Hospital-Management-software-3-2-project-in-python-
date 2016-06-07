@@ -169,34 +169,15 @@ fieldset {
  
 
 <br> <br>
-<head>
-<style>
-table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-}
-th, td {
-    padding: 5px;
-    text-align: left;
-}
-table#t01 {
-    width: 100%;    
-    background-color: #f1f1c1;
-}
-tbody{
-  width:100%;
-  overflow-y:auto;
-  overflow-x:hidden;
-}
-</style>
-</head>
+
 <body>
 
 
 
 
-<table id="t01">
+<table class="table">
   <caption>Doctor Information Table</caption>
+  <thead>
   <tr>
     <th>DoctorID</th>
     <th>Name</th>  
@@ -209,9 +190,10 @@ tbody{
     <th>Email</th> 
     <th>Gender</th>  
   </tr>
+  </thead>
   {% for item in datas %}
   <tbody>
-  <tr>
+  <tr class="success">
     <td>{{ item.0 }}</td>
     <td>{{ item.1 }}</td>    
     <td>{{ item.2}}</td>
